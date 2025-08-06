@@ -118,7 +118,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     formData.append("audio", uploadData.file);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/up/upload/song`, {
+      const response = await fetch(`${API_BASE_URL}/up/songs`, {
         method: "POST",
         body: formData,
       });
