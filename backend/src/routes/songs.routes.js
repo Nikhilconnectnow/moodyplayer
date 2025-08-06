@@ -49,7 +49,7 @@ const ADMIN_PASSWORD = "choteBhaiSecret123";  // Secure Password (should be in e
 router.post('/songs', upload.single('audio'), async (req, res) => {
     try {
         // Password Verification
-        const { password, title, artist, mood } = req.body;
+        const { password, title, mood } = req.body;
         if (password !== ADMIN_PASSWORD) {
             return res.status(401).json({
                 success: false,
@@ -64,7 +64,6 @@ router.post('/songs', upload.single('audio'), async (req, res) => {
         // Save Song Data to MongoDB
         const newSong = new Song({
             title: title,
-            artist: artist,
             audio: fileData.url,
             mood: mood
         });
