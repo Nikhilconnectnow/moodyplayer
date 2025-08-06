@@ -44,7 +44,7 @@ router.use(express.json());
 //     }
 // });
 
-const ADMIN_PASSWORD = process.env.password;  // Secure Password (should be in env file in production)
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;  // Secure Password (should be in env file in production)
 
 router.post('/songs', upload.single('audio'), async (req, res) => {
     try {
