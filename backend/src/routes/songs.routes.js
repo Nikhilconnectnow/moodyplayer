@@ -66,6 +66,7 @@ router.post('/songs', upload.single('audio'), async (req, res) => {
             title: title,
             audio: fileData.url,
             mood: mood
+            
         });
 
         await newSong.save();
